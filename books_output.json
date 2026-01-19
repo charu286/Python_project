@@ -1,0 +1,351 @@
+[
+  {
+    "source": "books.toscrape",
+    "title": "A Light in the Attic",
+    "detail_url": "http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
+    "price": "Â£51.77",
+    "availability": "In stock",
+    "rating": "Three"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Tipping the Velvet",
+    "detail_url": "http://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html",
+    "price": "Â£53.74",
+    "availability": "In stock",
+    "rating": "One"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Soumission",
+    "detail_url": "http://books.toscrape.com/catalogue/soumission_998/index.html",
+    "price": "Â£50.10",
+    "availability": "In stock",
+    "rating": "One"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Sharp Objects",
+    "detail_url": "http://books.toscrape.com/catalogue/sharp-objects_997/index.html",
+    "price": "Â£47.82",
+    "availability": "In stock",
+    "rating": "Four"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Sapiens: A Brief History of Humankind",
+    "detail_url": "http://books.toscrape.com/catalogue/sapiens-a-brief-history-of-humankind_996/index.html",
+    "price": "Â£54.23",
+    "availability": "In stock",
+    "rating": "Five"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "The Requiem Red",
+    "detail_url": "http://books.toscrape.com/catalogue/the-requiem-red_995/index.html",
+    "price": "Â£22.65",
+    "availability": "In stock",
+    "rating": "One"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "The Dirty Little Secrets of Getting Your Dream Job",
+    "detail_url": "http://books.toscrape.com/catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html",
+    "price": "Â£33.34",
+    "availability": "In stock",
+    "rating": "Four"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",
+    "detail_url": "http://books.toscrape.com/catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html",
+    "price": "Â£17.93",
+    "availability": "In stock",
+    "rating": "Three"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
+    "detail_url": "http://books.toscrape.com/catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html",
+    "price": "Â£22.60",
+    "availability": "In stock",
+    "rating": "Four"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "The Black Maria",
+    "detail_url": "http://books.toscrape.com/catalogue/the-black-maria_991/index.html",
+    "price": "Â£52.15",
+    "availability": "In stock",
+    "rating": "One"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Starving Hearts (Triangular Trade Trilogy, #1)",
+    "detail_url": "http://books.toscrape.com/catalogue/starving-hearts-triangular-trade-trilogy-1_990/index.html",
+    "price": "Â£13.99",
+    "availability": "In stock",
+    "rating": "Two"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Shakespeare's Sonnets",
+    "detail_url": "http://books.toscrape.com/catalogue/shakespeares-sonnets_989/index.html",
+    "price": "Â£20.66",
+    "availability": "In stock",
+    "rating": "Four"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Set Me Free",
+    "detail_url": "http://books.toscrape.com/catalogue/set-me-free_988/index.html",
+    "price": "Â£17.46",
+    "availability": "In stock",
+    "rating": "Five"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)",
+    "detail_url": "http://books.toscrape.com/catalogue/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html",
+    "price": "Â£52.29",
+    "availability": "In stock",
+    "rating": "Five"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Rip it Up and Start Again",
+    "detail_url": "http://books.toscrape.com/catalogue/rip-it-up-and-start-again_986/index.html",
+    "price": "Â£35.02",
+    "availability": "In stock",
+    "rating": "Five"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991",
+    "detail_url": "http://books.toscrape.com/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html",
+    "price": "Â£57.25",
+    "availability": "In stock",
+    "rating": "Three"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Olio",
+    "detail_url": "http://books.toscrape.com/catalogue/olio_984/index.html",
+    "price": "Â£23.88",
+    "availability": "In stock",
+    "rating": "One"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Mesaerion: The Best Science Fiction Stories 1800-1849",
+    "detail_url": "http://books.toscrape.com/catalogue/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html",
+    "price": "Â£37.59",
+    "availability": "In stock",
+    "rating": "One"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "Libertarianism for Beginners",
+    "detail_url": "http://books.toscrape.com/catalogue/libertarianism-for-beginners_982/index.html",
+    "price": "Â£51.33",
+    "availability": "In stock",
+    "rating": "Two"
+  },
+  {
+    "source": "books.toscrape",
+    "title": "It's Only the Himalayas",
+    "detail_url": "http://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html",
+    "price": "Â£45.17",
+    "availability": "In stock",
+    "rating": "Two"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Learning Python",
+    "author": "Mark Lutz",
+    "first_publish_year": 1999,
+    "isbn": null,
+    "openlibrary_key": "/works/OL2784125W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Python",
+    "author": "Mark Lutz",
+    "first_publish_year": 1998,
+    "isbn": null,
+    "openlibrary_key": "/works/OL2784127W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Python Cookbook",
+    "author": "Alex Martelli",
+    "first_publish_year": 2002,
+    "isbn": null,
+    "openlibrary_key": "/works/OL14873289W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Fluent Python",
+    "author": "Luciano Ramalho",
+    "first_publish_year": 2015,
+    "isbn": null,
+    "openlibrary_key": "/works/OL19932156W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Core Python Programming",
+    "author": "R. Nageswara Rao",
+    "first_publish_year": 2016,
+    "isbn": null,
+    "openlibrary_key": "/works/OL30906747W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Programming Python",
+    "author": "Mark Lutz",
+    "first_publish_year": 1996,
+    "isbn": null,
+    "openlibrary_key": "/works/OL2784126W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Black Hat Python",
+    "author": "Justin Seitz",
+    "first_publish_year": 2014,
+    "isbn": null,
+    "openlibrary_key": "/works/OL19547345W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Think Python",
+    "author": "Allen B. Downey",
+    "first_publish_year": 2009,
+    "isbn": null,
+    "openlibrary_key": "/works/OL16976951W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Python",
+    "author": "Joshua Welsh",
+    "first_publish_year": 2017,
+    "isbn": null,
+    "openlibrary_key": "/works/OL20212390W"
+  },
+  {
+    "source": "openlibrary",
+    "title": "Python For Data Analysis",
+    "author": "Wes McKinney",
+    "first_publish_year": 2012,
+    "isbn": null,
+    "openlibrary_key": "/works/OL17422847W"
+  },
+  {
+    "source": "google_books",
+    "title": "The Power of Python",
+    "authors": [
+      "Rachel Keranen"
+    ],
+    "publisher": "Cavendish Square Publishing, LLC",
+    "publishedDate": "2017-12-15",
+    "isbn": "9781502629494",
+    "info_link": "http://books.google.co.in/books?id=vilmDwAAQBAJ&dq=python&hl=&source=gbs_api",
+    "author": "Rachel Keranen"
+  },
+  {
+    "source": "google_books",
+    "title": "Programming in Python 3",
+    "authors": [
+      "Mark Summerfield"
+    ],
+    "publisher": "Addison-Wesley Professional",
+    "publishedDate": "2010",
+    "isbn": "9780321680563",
+    "info_link": "http://books.google.co.in/books?id=H9emM_LGFDEC&dq=python&hl=&source=gbs_api",
+    "author": "Mark Summerfield"
+  },
+  {
+    "source": "google_books",
+    "title": "Quick Revision of Python programming",
+    "authors": [
+      "Mahesh Sambhaji Jadhav"
+    ],
+    "publisher": "HighTechEasy Publishing",
+    "publishedDate": "2020-01-21",
+    "isbn": null,
+    "info_link": "https://play.google.com/store/books/details?id=WSTMDwAAQBAJ&source=gbs_api",
+    "author": "Mahesh Sambhaji Jadhav"
+  },
+  {
+    "source": "google_books",
+    "title": "Core Python Programming",
+    "authors": [
+      "Wesley Chun"
+    ],
+    "publisher": "Prentice Hall Professional",
+    "publishedDate": "2001",
+    "isbn": "9780130260369",
+    "info_link": "http://books.google.co.in/books?id=mh0bU6NXrBgC&dq=python&hl=&source=gbs_api",
+    "author": "Wesley Chun"
+  },
+  {
+    "source": "google_books",
+    "title": "Taming PYTHON By Programming",
+    "authors": [
+      "Jeeva Jose"
+    ],
+    "publisher": "KHANNA PUBLISHING HOUSE",
+    "publishedDate": null,
+    "isbn": "9789386173348",
+    "info_link": "https://play.google.com/store/books/details?id=6HgFEAAAQBAJ&source=gbs_api",
+    "author": "Jeeva Jose"
+  },
+  {
+    "source": "google_books",
+    "title": "Problem Solving and Python Programming",
+    "authors": [
+      "J Jayalakshmi et al."
+    ],
+    "publisher": "S. Chand Publishing",
+    "publishedDate": null,
+    "isbn": "9789352834853",
+    "info_link": "https://play.google.com/store/books/details?id=U3scEAAAQBAJ&source=gbs_api",
+    "author": "J Jayalakshmi et al."
+  },
+  {
+    "source": "google_books",
+    "title": "Expert Python Programming",
+    "authors": [
+      "Michal Jaworski",
+      "Tarek Ziadé"
+    ],
+    "publisher": null,
+    "publishedDate": "2019-04-29",
+    "isbn": "1789808898",
+    "info_link": "http://books.google.co.in/books?id=KVc6xQEACAAJ&dq=python&hl=&source=gbs_api",
+    "author": "Michal Jaworski"
+  },
+  {
+    "source": "google_books",
+    "title": "Monty Python's Flying Circus",
+    "authors": [
+      "Darl Larsen"
+    ],
+    "publisher": "Bloomsbury Publishing PLC",
+    "publishedDate": "2008-06-13",
+    "isbn": "9781461669708",
+    "info_link": "https://play.google.com/store/books/details?id=Ud9h3kdxQNQC&source=gbs_api",
+    "author": "Darl Larsen"
+  },
+  {
+    "source": "google_books",
+    "title": "A Book about the Film Monty Python's The Meaning of Life",
+    "authors": [
+      "Darl Larsen"
+    ],
+    "publisher": "Bloomsbury Publishing PLC",
+    "publishedDate": "2020-06-29",
+    "isbn": "9781538115978",
+    "info_link": "https://play.google.com/store/books/details?id=-ZviDwAAQBAJ&source=gbs_api",
+    "author": "Darl Larsen"
+  }
+]

@@ -1,0 +1,173 @@
+import argparse
+import csv
+import json
+import time
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, quote_plus
+
+#!/usr/bin/env python3
+"""
+Multi-source book extractor
+
+Usage examples:
+    python books_scraper.py --mode scrape --pages 2 --out books_toscrape.json
+    python books_scraper.py --mode search --query "data science" --out books_search.json
+
+Dependencies: requests, beautifulsoup4
+pip install requests beautifulsoup4
+"""
+
+
+
+def scrape_books_toscrape(max_pages=1, delay=0.5):
+        """Scrape books from http://books.toscrape.com (practice site)."""
+        base = "http://books.toscrape.com/"
+        results = []
+        for p in range(1, max_pages + 1):
+                url = base if p == 1 else urljoin(base, f"catalogue/page-{p}.html")
+                r = requests.get(url, timeout=10)
+                if r.status_code != 200:
+                        break
+                soup = BeautifulSoup(r.text, "html.parser")
+                for article in soup.select("article.product_pod"):
+                        title_tag = article.h3.a
+                        title = title_tag["title"].strip()
+                        rel = title_tag["href"]
+                        detail = urljoin(url, rel)
+                        price = article.select_one(".price_color").text.strip()
+                        availability = article.select_one(".availability").text.strip()
+                        rating_class = article.p.get("class", [])
+                        rating = next((c for c in rating_class if c != "star-rating"), None)
+                        results.append(
+                                {
+                                        "source": "books.toscrape",
+                                        "title": title,
+                                        "detail_url": detail,
+                                        "price": price,
+                                        "availability": availability,
+                                        "rating": rating,
+                                }
+                        )
+                time.sleep(delay)
+        return results
+
+
+def search_openlibrary(query, limit=10):
+        """Search Open Library (public API)"""
+        url = f"https://openlibrary.org/search.json?q={quote_plus(query)}&limit={limit}"
+        r = requests.get(url, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+        out = []
+        for doc in data.get("docs", []):
+                out.append(
+                        {
+                                "source": "openlibrary",
+                                "title": doc.get("title"),
+                                "author": (doc.get("author_name") or [None])[0],
+                                "first_publish_year": doc.get("first_publish_year"),
+                                "isbn": (doc.get("isbn") or [None])[0],
+                                "openlibrary_key": doc.get("key"),
+                        }
+                )
+        return out
+
+
+def search_google_books(query, limit=10, api_key=None):
+        """Search Google Books API (no key usually required for small queries)."""
+        params = {"q": query, "maxResults": min(limit, 40)}
+        if api_key:
+                params["key"] = api_key
+        r = requests.get("https://www.googleapis.com/books/v1/volumes", params=params, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+        out = []
+        for item in data.get("items", [])[:limit]:
+                v = item.get("volumeInfo", {})
+                out.append(
+                        {
+                                "source": "google_books",
+                                "title": v.get("title"),
+                                "authors": v.get("authors"),
+                                "publisher": v.get("publisher"),
+                                "publishedDate": v.get("publishedDate"),
+                                "isbn": next((id["identifier"] for id in v.get("industryIdentifiers", []) if id.get("type", "").startswith("ISBN")), None),
+                                "info_link": v.get("infoLink"),
+                        }
+                )
+        return out
+
+
+def dedupe(items, key_fields=("title", "author")):
+        """Simple dedupe by key fields (first available)."""
+        seen = set()
+        out = []
+        for it in items:
+                key = tuple((it.get(k) or "").strip().lower() for k in key_fields)
+                if key in seen:
+                        continue
+                seen.add(key)
+                out.append(it)
+        return out
+
+
+def save_json(path, data):
+        with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def save_csv(path, data):
+        if not data:
+                return
+        keys = sorted({k for d in data for k in d.keys()})
+        with open(path, "w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, keys)
+                writer.writeheader()
+                writer.writerows(data)
+
+
+def main():
+        p = argparse.ArgumentParser(description="Extract book data from multiple sources")
+        p.add_argument("--mode", choices=("scrape", "search", "all"), default="all")
+        p.add_argument("--pages", type=int, default=1, help="pages for books.toscrape")
+        p.add_argument("--query", type=str, default="python", help="search query for APIs")
+        p.add_argument("--limit", type=int, default=10, help="limit results from search APIs")
+        p.add_argument("--google-key", type=str, default=None, help="Google Books API key (optional)")
+        p.add_argument("--out", type=str, default="books_output.json", help="output file (json or csv)")
+        args = p.parse_args()
+
+        results = []
+        if args.mode in ("scrape", "all"):
+                try:
+                        results.extend(scrape_books_toscrape(max_pages=args.pages))
+                except Exception as e:
+                        print("books.toscrape error:", e)
+
+        if args.mode in ("search", "all"):
+                try:
+                        results.extend(search_openlibrary(args.query, limit=args.limit))
+                except Exception as e:
+                        print("openlibrary error:", e)
+                try:
+                        results.extend(search_google_books(args.query, limit=args.limit, api_key=args.google_key))
+                except Exception as e:
+                        print("google books error:", e)
+
+        # normalize some fields for dedupe: prefer 'author' then 'authors' first element
+        for r in results:
+                if "author" not in r and r.get("authors"):
+                        r["author"] = r["authors"][0] if isinstance(r.get("authors"), (list, tuple)) else r.get("authors")
+
+        results = dedupe(results, key_fields=("title", "author"))
+
+        out = args.out
+        if out.lower().endswith(".csv"):
+                save_csv(out, results)
+        else:
+                save_json(out, results)
+        print(f"Saved {len(results)} records to {out}")
+
+
+if __name__ == "__main__":
+        main()
